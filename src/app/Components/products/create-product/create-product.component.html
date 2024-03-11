@@ -1,0 +1,38 @@
+<div class="allContent">
+    <div class="mainContent">
+        <div class="headerContent">
+            <p class="text-danger">Create New Product</p>  
+            <button (click)="closeForm()">
+                <i class="fa fa-close" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="content">
+            <form action="#" #create="ngForm" (ngSubmit)="onCreateClick(create)">
+                <div class="inputField1">
+                    <label for="title">Title : </label>
+                    <input type="text" name="title" placeholder="Title" ngModel required>
+                </div>
+                <div class="inputField">
+                    <label for="descrption">Description* :</label>
+                    <textarea name="descrption" id="descrption" cols="40" rows="5" ngModel placeholder="Description"></textarea>
+                </div>
+                <div class="column">
+                    <div class="inputField">
+                        <label>Price :</label>
+                        <input type="number" ngModel name="price" required>
+                    </div>
+                    <div class="inputField">
+                        <label>Image :</label>
+                        <input type="text" placeholder="Image Url" ngModel name="image" required>
+                    </div>
+                </div>
+                <div class="inputField">
+                    <label>Category :</label>
+                    <input type="text" placeholder="Category" ngModel name="category" required>
+                </div>
+                <div class="btn"><button type="submit">Create</button></div>
+            </form>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,20 @@
+.height{
+    height: 510px;
+}
+.height .back{
+    width: 50%;
+    height: 300px;
+    background-color: beige;
+    margin: auto;
+    border-radius: 20px;
+}
+input{
+    width: 100%;
+    border-radius: 20px;
+    border: solid 2px black;
+    padding: 8px;
+    font-weight: bold;
+}
+.btn{
+    width: 70%;
+}

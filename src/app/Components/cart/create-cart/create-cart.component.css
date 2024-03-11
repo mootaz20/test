@@ -1,0 +1,13 @@
+.hieght{
+    min-height: 450px;
+}
+.back{
+    width: 60%;
+    margin: auto;
+    background-color: beige;
+    padding: 10px;
+    border-radius: 10px;
+}
+.btn-width{
+    width: 80%;
+}

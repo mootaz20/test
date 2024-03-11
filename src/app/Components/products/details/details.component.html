@@ -1,0 +1,25 @@
+<app-edit
+    *ngIf="showEdit"
+    (close)="closeEdit()"
+    [product]="selectedEdit"
+></app-edit>
+<div class="container p-5 ">
+    <div class="card fw-bold">
+        <img src={{product?.image}} class="card-img-top imageWidth" alt="error">
+        <div class="card-body">
+          <h5 class="card-title">Title :{{product?.title}}</h5>
+          <p class="card-text">Description :{{product?.description}}</p>
+          <p class="card-text">Price :{{product?.price}}$</p>
+          <div class="row mb-3">
+              <div class="col-4">
+                  <p class="card-text"><i class="fa fa-star text-warning" aria-hidden="true"></i> {{product?.rating.rate}}</p>
+              </div>
+              <div class="col-4">
+                  <p class="card-text">Count :{{product?.rating.count}}</p>
+              </div>
+          </div>
+          <button type="button" class="btn btn-danger m-2" (click)="onEditClick(product)">EDIT</button>
+          <button type="button" class="btn btn-danger m-2" (click)="onDeleteClick(product.id)">DELETE</button>
+        </div>
+      </div>
+</div>

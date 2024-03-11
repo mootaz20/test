@@ -1,0 +1,66 @@
+<div class="container mt-5 mb-5">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div>
+          <label>Email:</label>
+          <input type="email" formControlName="email" />
+        </div>
+    
+        <div>
+          <label>Username:</label>
+          <input type="text" formControlName="username" />
+        </div>
+    
+        <div>
+          <label>Password:</label>
+          <input type="password" formControlName="password" />
+        </div>
+    
+        <div formGroupName="name">
+          <div>
+            <label>First Name:</label>
+            <input type="text" formControlName="firstname" />
+          </div>
+          <div>
+            <label>Last Name:</label>
+            <input type="text" formControlName="lastname" />
+          </div>
+        </div>
+    
+        <div formGroupName="address">
+          <div>
+            <label>City:</label>
+            <input type="text" formControlName="city" />
+          </div>
+          <div>
+            <label>Street:</label>
+            <input type="text" formControlName="street" />
+          </div>
+          <div>
+            <label>Number:</label>
+            <input type="text" formControlName="number" />
+          </div>
+          <div>
+            <label>Zip Code:</label>
+            <input type="text" formControlName="zipcode" />
+          </div>
+          <div formGroupName="geolocation">
+            <div>
+              <label>Lat:</label>
+              <input type="text" formControlName="lat" />
+            </div>
+            <div>
+              <label>Long:</label>
+              <input type="text" formControlName="long" />
+            </div>
+          </div>
+        </div>
+    
+        <div>
+          <label>Phone:</label>
+          <input type="text" formControlName="phone" />
+        </div>
+    
+        <button type="submit" class="btn btn-outline-danger fw-bold btn-lg">Submit</button>
+      </form>
+    
+</div>

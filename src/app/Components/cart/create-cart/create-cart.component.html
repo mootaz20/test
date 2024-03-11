@@ -1,0 +1,23 @@
+<div class="container hieght p-5 mt-5 mb-5">
+    <div class="back">
+        <form class="fw-bold" [formGroup]="reactiveForm" (ngSubmit)="OnFormSubmitted()">
+            <label>UserId :</label>
+            <input type="text" formControlName="userId" class="form-control fw-bold" placeholder="UserId">
+            <label>Date :</label>
+            <input type="date" formControlName="date" class="form-control">
+            <h3>Products :</h3>
+            <div formArrayName="products">
+                <div *ngFor="let exp of reactiveForm.get('products')['controls']; let i = index" [formGroupName]="i">
+                    <label>ProductId :</label>
+                    <input type="number" formControlName="productId" class="form-control fw-bold"
+                        placeholder="ProductId">
+                    <label>Quantity :</label>
+                    <input type="number" formControlName="quantity" class="form-control fw-bold" placeholder="Quantity">
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-width m-4 btn-outline-danger fw-bold">Create Order</button>
+            </div>
+        </form>
+    </div>
+</div>

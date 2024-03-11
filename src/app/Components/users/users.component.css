@@ -1,0 +1,10 @@
+.btn-width{
+    width: 40%;
+}
+input{
+    border: solid 2px black;
+    padding: 2px;
+    font-weight: bold;
+    margin-left: 4px;
+    border-radius: 5px;
+}

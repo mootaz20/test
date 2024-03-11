@@ -1,0 +1,53 @@
+<div class="container mt-5 mb-5">
+    <div class="fw-bold row">
+      <div class="col-sm-6 mb-3">
+        <label for="sort">Sort :</label>
+        <input type="text" name="sort" placeholder="'desc' or 'asc'" #sort class="form-control">
+        <button type="button" (click)="onSortClick()" class="btn m-2 btn-outline-danger fw-bold">Sort</button>
+      </div>
+      <div class="col-sm-6 p-2 text-center">
+        <button type="button" routerLink="createUser" class="btn btn-outline-danger fw-bold">CREATE NEW USER</button>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <app-loader *ngIf="isLoading"></app-loader>
+      <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let item of users; let i = index;">
+        <div class="card mb-4 fw-bold">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Username: {{item.username}}</li>
+            <li class="list-group-item">Email: {{item.email}}</li>
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col-sm-6 mb-2">
+                  <p>Firstname: {{item.name.firstname}}</p>
+                  <p>Lastname: {{item.name.lastname}}</p>
+                </div>
+                <div class="col-sm-6 mb-2">
+                  <p>Phone: {{item.phone}}</p>
+                </div>
+                <div class="col-sm-6 mb-2">
+                  <p>City: {{item.address.city}}</p>
+                  <p>Street: {{item.address.street}}</p>
+                </div>
+                <div class="col-sm-6 mb-2">
+                  <p>Number: {{item.address.number}}</p>
+                  <p>Zipcode: {{item.address.zipcode}}</p>
+                </div>
+                <div class="col-12">
+                  <p>Geolocation: Lat: {{item.address.geolocation.lat}} Long: {{item.address.geolocation.long}}</p>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row text-center">
+                <div class="col-12">
+                  <button type="button" (click)="onDeleteClick(item.id)" class="btn btn-width fw-bold btn-outline-danger">Delete</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
