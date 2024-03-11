@@ -55,16 +55,21 @@ export class HttpServiceService {
     this.http.post('https://fakestoreapi.com/auth/login', data)
       .subscribe({
         next: (res) => {
-          this.token = { ...res };
-          console.log(this.token);
-          alert('Login Successful! ');
-          this.route.navigate(['products']);
+          this.handleToken(res);
         },
         error: (err) => {
           console.log(err);
           alert(`Invalid username or password`);
         }
       });
+  }
+  
+  private handleToken(res){
+    this.token = res.token;
+    console.log(this.token);
+    localStorage.setItem('token', this.token);
+    alert('Login Successful! ');
+    this.route.navigate(['products']);
   }
 
   putProduct(id, data) {

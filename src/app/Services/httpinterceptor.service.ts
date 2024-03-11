@@ -11,7 +11,7 @@ export class HttpinterceptorService implements HttpInterceptor{
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     // console.log(this.httpService.token.token);
     if(req.url != 'https://fakestoreapi.com/auth/login'){
-      let modified = req.clone({headers: req.headers.set('Authorization', this.httpService.token.token)});
+      let modified = req.clone({headers: req.headers.set('Authorization', this.httpService.token)});
       console.log(modified);
       return next.handle(modified);
     }
